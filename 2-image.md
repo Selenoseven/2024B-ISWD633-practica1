@@ -4,6 +4,7 @@ Es un archivo único que contiene todos los programas, librerías, dependencias 
 
 
 ## ¿Cuál es la relación entre una imagen y un contenedor? 
+La relación entre una imagen y un contenedor radica en que una imagen es como una plantilla o un archivo unico que contiene lo necesito para su ejecucion, sin embargo estas imagenes solo son recursos estáticos y solo son de lectura. Cuando estas imagenes se ejecutan se convierten en un contenedor, que es una instacia en ejecución de esa imagen. El contenedor es el entorno aislado en el que se ejecuta la aplicación basada en la imagen que se tiene.
 # COMPLETAR 
 
 ![Imagen y contenedores](img/imagenContenedores.JPG)
@@ -24,12 +25,22 @@ docker pull <nombre imagen>:<tag>
 ```
 
 Descargar la imagen **hello-world**
+```
+docker pull hello-world
+```
+
 # COMPLETAR
 
 **¿Qué es nginx**
+Es un servidor web de código abierto que, desde su e+éxito inicial como servidor web, ahora también es usado como proxy inverso, cache HTTP, y balanceador de carga.
+
+Está diseñado para ofrecer un bajo uso de memoria y alta concurrencia, en lugar de crear nuevos procesos para cada solicitud web, Nginx usa un enfoque asincrónico basado en eventos donde las solicitudes se manejan en un solo hilo, con Nginx un proceso maestro puede controlar múltiples procesos de trabajo. El proceso maestro mantiene los procesos de trabajo, y son estos lo que hacen el procesamiento real.
 # COMPLETAR 
 
 Descargar la imagen  **nginx** en la versión **alpine**
+```
+docker pull nginx:alpine
+```
 # COMPLETAR
 
 ### Listar imágenes
@@ -39,6 +50,7 @@ docker images
 ```
 
 # COLOCAR UNA CAPTURA DE PANTALLA DEL RESULTADO 
+![Imagen y contenedores](img/P1ListarImagenes.PNG)
 
 **Identificadores**
 
@@ -53,9 +65,15 @@ docker inspect <nombre imagen>:<tag>
 ```
 
 Inspeccionar la imagen hello-world 
+```
+docker inspect hello-world
+```
 # COMPLETAR
 
 **¿Con qué algoritmo se está generando el ID de la imagen**
+
+El ID de la imagen ésta generado utilizando el algoritmo de hash criptográfico SHA-256.
+
 # COMPLETAR
 
 ### Filtrar imágenes
@@ -73,6 +91,9 @@ docker rmi <nombre imagen>:<tag>
 ```
 
 Eliminar la imagen hello-world 
+```
+docker rmi hello-world
+```
 # COMPLETAR
 
 -f: Es la opción para forzar la eliminación de la imagen incluso si hay contenedores en ejecución que utilizan esa imagen.
@@ -85,3 +106,6 @@ Es una buena práctica detener y eliminar todos los contenedores que dependan de
 docker rmi -f <nombre imagen>:<tag>
 ```
 
+```
+docker rmi -f hello-world
+```
