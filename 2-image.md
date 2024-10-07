@@ -50,7 +50,7 @@ docker images
 ```
 
 # COLOCAR UNA CAPTURA DE PANTALLA DEL RESULTADO 
-![Imagen y contenedores](img/P1ListarImagenes.PNG)
+![Imagen y contenedores](img/P1ListarImagenes.png)
 
 **Identificadores**
 
